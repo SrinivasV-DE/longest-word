@@ -22,11 +22,14 @@ class Game:
             else:
                 return False
         return True
-def is_valid(self, word):
-     return self.__check_dictionary(word
+    def is_valid(self, word):
+        # [...]
 
- @staticmethod
- def __check_dictionary(word):
-    response = requests.get(f"https://dictionary.lewagon.com/{word}")
-    json_response = response.json()
-    return json_response['found']
+        return self.__check_dictionary(word)
+
+
+    @staticmethod
+    def __check_dictionary(word):
+        response = requests.get(f"https://dictionary.lewagon.com/{word}")
+        json_response = response.json()
+        return json_response['found']
