@@ -1,4 +1,4 @@
-# .python-ci.yml - added right pyline
+# .python-ci.yml - added right
 
 name: basic CI
 on:
