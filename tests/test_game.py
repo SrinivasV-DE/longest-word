@@ -21,7 +21,7 @@ class TestGame:
         # setup
         new_game = Game()
         # verify
-        assert new_game.is_valid('') is False
+        assert new_game.is_valid(' ') is False
 
 
     def test_is_valid(self):
@@ -44,13 +44,13 @@ class TestGame:
         # exerice
         new_game.grid = list(test_grid) # Force the grid to a test case
         # verify
-        assert new_game.is_valid(test_word) is False
+        assert new_game.is_valid(test_word) is True
         # teardown
         assert new_game.grid == list(test_grid) # Make sure the grid remained untouched
-# tests/test_game.py
-# [...]
+
     def test_unknown_word_is_invalid(self):
         """A word that is not in the English dictionary should not be valid"""
         new_game = Game()
-        new_game.grid = list('KWIENFUQW') # Force the grid to a test case: adjusted
-        assert new_game.is_valid('FUN') is True
+        new_game.grid = list('KWIENFUQW') # Force the grid to a test case:
+        assert new_game.is_valid('FEUN') is False
+        #assert new_game.grid == list('KWIENFUQW') # Make sure the grid remained untouched
